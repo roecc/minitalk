@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 12:02:48 by kali              #+#    #+#             */
-/*   Updated: 2023/06/24 13:52:05 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/24 14:01:50 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,16 @@ void	serialize(int pid, char c)
 int	main (int argc, char *argv[])
 {
 	int	server_pid;
+	int	i;
 
 	server_pid = atoi(argv[1]);
-	serialize (server_pid, argv[2][0]);
 
+	i = -1;
+	while (argv[2][++i])
+	{
+		serialize (server_pid, argv[2][i]);
+		usleep (2000);
+	}
+	serialize (server_pid, '\0');
 	return (0);
 }

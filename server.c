@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:54:51 by kali              #+#    #+#             */
-/*   Updated: 2023/06/24 13:45:39 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/24 14:01:28 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	deserialize (char *str)
 		pwr = pwr/2;
 	}
 	printf ("%c", c);
-	printf ("\n");
+	if (c == '\0')
+		printf ("\n");
 }
 
 void	buffer (char c)
