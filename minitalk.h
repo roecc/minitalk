@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:58:20 by kali              #+#    #+#             */
-/*   Updated: 2023/06/24 19:04:32 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/25 19:35:08 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "./libft/libft.h"
 
-void	ft_bzero(void *s, size_t n);
-char	*ft_itoa(int n);
-char	*ft_strdup(const char *s1);
-long int	ft_strlen(char *s);
+#define _GNU_SOURCE

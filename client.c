@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 12:02:48 by kali              #+#    #+#             */
-/*   Updated: 2023/06/25 03:08:40 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/25 19:48:38 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,8 @@ void	serialize(int pid, char c)
 		else
 			kill(pid, SIGUSR1);
 		i = i/2;
-		usleep(40);
+		usleep(350);
 	}
-}
-
-int	read_pid ()
-{
-	int number;
-	
-	FILE *file = fopen("pid.txt", "r");  // Open the file in read mode
-
-    if (file != NULL)
-    {
-        char line[100];
-        if (fgets(line, sizeof(line), file) != NULL)  // Read the first line of the file
-        	number = atoi(line);  // Convert the line to an integer
-
-        fclose(file);  // Close the file
-    }
-	return number;
 }
 
 int	main (int argc, char *argv[])
@@ -53,13 +36,16 @@ int	main (int argc, char *argv[])
 	int	server_pid;
 	int	i;
 
-	server_pid = read_pid(); //atoi(argv[1]);
+	if (argc != 3)
+		return(-1);
+
+	server_pid = ft_atoi(argv[1]);
 
 	i = -1;
-	while (argv[1][++i])
+	while (argv[2][++i])
 	{
-		serialize (server_pid, argv[1][i]);
-		usleep (320);
+		serialize (server_pid, argv[2][i]);
+		//usleep (840);
 	}
 	serialize (server_pid, '\0');
 	return (0);

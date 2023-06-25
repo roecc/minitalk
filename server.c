@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:54:51 by kali              #+#    #+#             */
-/*   Updated: 2023/06/24 19:00:51 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/25 19:49:22 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	deserialize (char *str)
 	char	c;
 	int	pwr;
 
+	c = 0;
 	pwr = 128;
 	i = -1;
 	while (++i < 8)
@@ -25,9 +26,9 @@ void	deserialize (char *str)
 		c += (str[i] - '0') * pwr;
 		pwr = pwr/2;
 	}
-	printf ("%c", c);
+	write(1, &c, 1);
 	if (c == '\0')
-		printf ("\n");
+		write(1, "\n", 1);
 }
 
 void	buffer (char c)
@@ -64,14 +65,14 @@ void	sigusr2_handler ()
 	buffer('1');
 }
 
-void	write_pid(int pid)
+/*void	write_pid(int pid)
 {
     FILE *file = fopen("pid.txt", "w");  // Open the file in write mode
 
     if (file)
     {
         // Write content to the file
-        fprintf(file, ft_itoa(pid));
+        fprintf(file, "%s", ft_itoa(pid));
 
         fclose(file);  // Close the file
     }
@@ -79,20 +80,18 @@ void	write_pid(int pid)
     {
         printf("Failed to create or open the file.\n");
     }
-}
+}*/
 
-int	main (int argc, char *argv[])
+int	main ()
 {
 	int	pid;
 
 	signal(SIGUSR1, sigusr1_handler);
 	signal(SIGUSR2, sigusr2_handler);
 	pid = getpid();
-	printf("pid: %d", pid);
-	write_pid(pid);
-	//printf() writes to stdout (the default output stream) which is usually line buffered. The buffer isn't flushed by the time sleep is called so nothing is displayed
-	// if stdout is redirected or you are writing to a file, simply printing a newline probably won't work. In such cases you should use fflush if you want the data written immediately
-	printf("\n");
+	//printf("pid: %d", pid);
+	ft_putnbr_fd(getpid(), 1);
+	write(1, "\n", 1);
 	while (1)
 		pause();
 	return (0);
