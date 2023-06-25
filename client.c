@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 12:02:48 by kali              #+#    #+#             */
-/*   Updated: 2023/06/24 19:11:46 by kali             ###   ########.fr       */
+/*   Updated: 2023/06/25 03:08:40 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	serialize(int pid, char c)
 		else
 			kill(pid, SIGUSR1);
 		i = i/2;
-		usleep(250);
+		usleep(40);
 	}
 }
 
@@ -59,7 +59,7 @@ int	main (int argc, char *argv[])
 	while (argv[1][++i])
 	{
 		serialize (server_pid, argv[1][i]);
-		usleep (2500);
+		usleep (320);
 	}
 	serialize (server_pid, '\0');
 	return (0);
