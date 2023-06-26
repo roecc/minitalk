@@ -14,4 +14,4 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "./lib/libft.h"
+#include "./libft/libft.h"
