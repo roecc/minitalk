@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:57:57 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:18:24 by ligabrie         ###   ########.fr       */
+/*   Created: 2022/11/28 14:35:30 by ligabrie          #+#    #+#             */
+/*   Updated: 2022/12/18 22:01:57 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "./lib/libft.h"
+int	ft_isprint(int c)
+{
+	if (c >= ' ' && c <= '~')
+		return (16384);
+	else
+		return (0);
+}

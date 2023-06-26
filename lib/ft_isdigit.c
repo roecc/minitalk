@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:57:57 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:18:24 by ligabrie         ###   ########.fr       */
+/*   Created: 2022/11/28 12:33:17 by ligabrie          #+#    #+#             */
+/*   Updated: 2022/12/18 22:01:50 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "./lib/libft.h"
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (2048);
+	else
+		return (0);
+}

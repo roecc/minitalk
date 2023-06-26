@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:57:57 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:18:24 by ligabrie         ###   ########.fr       */
+/*   Created: 2022/11/28 12:37:37 by ligabrie          #+#    #+#             */
+/*   Updated: 2022/12/18 22:01:40 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "./lib/libft.h"
+int	ft_isalnum(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (8);
+	if (c >= 'A' && c <= 'Z')
+		return (8);
+	if (c >= '0' && c <= '9')
+		return (8);
+	else
+		return (0);
+}

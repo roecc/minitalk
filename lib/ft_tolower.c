@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:57:57 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:18:24 by ligabrie         ###   ########.fr       */
+/*   Created: 2022/11/30 13:56:52 by ligabrie          #+#    #+#             */
+/*   Updated: 2022/12/14 12:24:50 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "./lib/libft.h"
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	if (c >= -128 && c < -1)
+		c = 256 + c;
+	return (c);
+}

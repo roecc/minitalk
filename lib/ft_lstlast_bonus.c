@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:57:57 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:18:24 by ligabrie         ###   ########.fr       */
+/*   Created: 2022/12/15 23:33:25 by admin             #+#    #+#             */
+/*   Updated: 2022/12/18 20:28:20 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "./lib/libft.h"
+#include"libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*tmp;
+
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	return (tmp);
+}
