@@ -6,7 +6,7 @@
 /*   By: ligabrie <ligabrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 13:58:09 by ligabrie          #+#    #+#             */
-/*   Updated: 2023/06/26 14:12:55 by ligabrie         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:09:55 by ligabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	receipt(int *sa_return)
 	return (1);
 }
 
-void	send(int pid, char c, void *sa)
+void	send(int pid, unsigned char c, void *sa)
 {
 	int	sa_return;
 	int	signal;
@@ -61,7 +61,7 @@ void	send(int pid, char c, void *sa)
 	}
 }
 
-void	serialize(int pid, char c)
+void	serialize(int pid, unsigned char c)
 {
 	struct sigaction	sa;
 
